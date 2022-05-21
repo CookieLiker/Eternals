@@ -8,7 +8,7 @@ const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 // When the client is ready, run this code (only once)
 client.once('ready', () => {
-    console.log('Ready!');
+	console.log('Ready!');
 });
 
 client.on('interactionCreate', async interaction => {
@@ -24,18 +24,22 @@ client.on('interactionCreate', async interaction => {
 		await interaction.reply(`Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`);
 	} else if (commandName === 'match') {
 		await interaction.reply('Under development. Go eat bugs');
-    await interaction.followUp(getServerMemberList());
-  } else if (commandName === 'matches') {
+		await interaction.followUp(getServerMemberList());
+	} else if (commandName === 'matches') {
 		await interaction.reply('This is an admin command :angry:');
-    // await interaction.followUp( matches.map((x) => x.userid1 + " + " + x.userid2) );
-    console.log(matches.map((match) => `${match.userid1} + ${match.userid2}`));
-    console.log(matches)
-  }
+		// await interaction.followUp( matches.map((x) => x.userid1 + " + " + x.userid2) );
+		console.log(matches.map((match) => `${match.userid1} + ${match.userid2}`));
+		console.log(matches)
+	}
 
-  function getServerMemberList(){
-    return `your id: ${interaction.user.id}`
-  }
-  
+	function getServerMemberList() {
+		return `your id: ${interaction.user.id}`
+	}
+
+	function compatibilityCheck() {
+		return `your id: ${interaction.user.id}`
+	}
+
 });
 
 
