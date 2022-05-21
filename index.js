@@ -1,6 +1,7 @@
 // Require the necessary discord.js classes
 const { Client, Intents } = require('discord.js');
 const { token } = require('./config.json');
+const { matches } = require('./matches.json');
 
 // Create a new client instance
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
@@ -23,8 +24,21 @@ client.on('interactionCreate', async interaction => {
 		await interaction.reply(`Your tag: ${interaction.user.tag}\nYour id: ${interaction.user.id}`);
 	} else if (commandName === 'match') {
 		await interaction.reply('Under development. Go eat bugs');
+    await interaction.followUp(getServerMemberList());
+  } else if (commandName === 'matches') {
+		await interaction.reply('This is an admin command :angry:');
+    // await interaction.followUp( matches.map((x) => x.userid1 + " + " + x.userid2) );
+    console.log(matches.map((match) => `${match.userid1} + ${match.userid2}`));
+    console.log(matches)
   }
+
+  function getServerMemberList(){
+    return `your id: ${interaction.user.id}`
+  }
+  
 });
+
+
 
 // Login to Discord with your client's token
 client.login(token);
