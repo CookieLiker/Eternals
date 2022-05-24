@@ -7,8 +7,8 @@ const commands = [
 	new SlashCommandBuilder().setName('ping').setDescription('Basic shit you know already.'),
 	new SlashCommandBuilder().setName('server').setDescription('Self-explanatory'),
 	new SlashCommandBuilder().setName('user').setDescription('Self-explanatory'),
-  new SlashCommandBuilder().setName('match').setDescription('Match with other interesting people'),
-  new SlashCommandBuilder().setName('matches').setDescription('FOR ADMINS ONLY, see which matches are going on'),
+	new SlashCommandBuilder().setName('match').setDescription('Match with other interesting people'),
+	new SlashCommandBuilder().setName('matches').setDescription('FOR ADMINS ONLY, see which matches are going on'),
 ]
 	.map(command => command.toJSON());
 
