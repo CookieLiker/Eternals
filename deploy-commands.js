@@ -9,6 +9,8 @@ const commands = [
 	new SlashCommandBuilder().setName('user').setDescription('Self-explanatory'),
 	new SlashCommandBuilder().setName('match').setDescription('Match with other interesting people'),
 	new SlashCommandBuilder().setName('matches').setDescription('FOR ADMINS ONLY, see which matches are going on'),
+	new SlashCommandBuilder().setName('closematch').setDescription('Delete this match. REMOVES ALL CHATS AND CHANNELS *CANNOT BE RECOVERED*'),
+	new SlashCommandBuilder().setName('forcereset').setDescription('THIS WILL RESET EVERYTHING!!!!'),
 ]
 	.map(command => command.toJSON());
 
